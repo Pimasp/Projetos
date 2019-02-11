@@ -12,7 +12,7 @@ print()
 
 pfr = type (input("Sua piscina possui uma parte mais funda e outra mais rasa? Digite 'S' para sim e 'N' para não :").lower)
 
-print("O conteudo da variavel pfr eh '{}' ".format(prf))
+print("O conteudo da variavel pfr eh '{}' ".format(pfr))
 
 if pfr == "s":
    print () 
