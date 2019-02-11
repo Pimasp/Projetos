@@ -1,0 +1,30 @@
+print ("Calculadora de Utilização de Produtos Químicos para Piscinas")
+
+print ()
+
+comprimento = float (input ("Qual o comprimento de sua piscina? Se o número não for inteiro, use '.' e não ',': "))
+
+print()
+
+largura = float (input ("Qual a largura de sua piscina? Se o número não for inteiro, use '.' e não ',': "))
+
+print()
+
+pfr = type (input("Sua piscina possui uma parte mais funda e outra mais rasa? Digite 'S' para sim e 'N' para não :").lower)
+
+print("O conteudo da variavel pfr eh '{}' ".format(prf))
+
+if pfr == "s":
+   print () 
+   prof_um = float (input("Qual a maior profundidade? "))
+   prof_dois = float (input("Qual a menor profundidade? "))
+   prof_ud =  ((prof_um*prof_dois)/2)
+   volume = comprimento * largura * prof_ud
+elif pfr == "n":
+   print ()
+   prof_tres = float (input ('Qual a profundidade da piscina? '))
+   volume = comprimento * largura * prof_tres
+          
+print (volume)
+
+## depois vou inserir as quantidades dos produtos a serem utilizados
