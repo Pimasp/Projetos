@@ -1,0 +1,192 @@
+print (150 * '-')
+print ("Calculadora de Utilização de Produtos Químicos HTH® para Tratamento de Piscinas")
+print (150 * '-')
+
+print ()
+
+## Definição do Fomato
+    
+print (150 * '-')
+print ("Escolha o formato de sua piscina:")
+print (150 * '-')
+print ("[ 1 ] Retangular/Quadrada")
+print ("[ 2 ] Oval")
+print ("[ 3 ] Circular")
+print (150 * '-')
+    
+valid_tipo = True
+valor = 1.0
+vr = float (valor)
+while valid_tipo:
+    tipo = input("Digite a opção: ")
+    if tipo.isalpha():
+        print("Formato inválido. Use somente os números 1, 2 ou 4.")
+    elif tipo not in ('1', '2', '3'):
+        print("Tipo inválido. Use somente os números 1, 2 ou 3.")
+    else:
+        valid_tipo = False
+        if tipo in ('2', '3'):
+            valor = 0.785
+            vr = float (valor)
+
+## Definição do Comprimento
+
+print (150 * '-')
+
+valid_comp = False
+while valid_comp == False:
+   try:
+      comprimento = float (input ("Qual o comprimento/diâmetro(1) de sua piscina (em metros)? Se o número não for inteiro, use '.' e não ',': "))
+      if comprimento <= 0:
+         print ('Comprimento/diâmetro(1) inválido. O valor deve ser maior que zero.')
+      else:
+         valid_comp = True
+   except:
+      print ("Comprimento/diâmetro (1) inválido. Use somente números ou os decimais separados por '.' e não ','")
+
+## Definição da Largura
+
+print (150 * '-')
+
+print()
+
+valid_larg = False
+while valid_larg == False:
+   try:
+      largura = float (input ("Qual a largura/diâmetro(2) de sua piscina (em metros)? Se o número não for inteiro, use '.' e não ',': "))
+      if largura <= 0:
+         print ('Largura/diâmetro(2) inválida(o). A largura/diâmetro(2) deve ser maior que zero.')
+      else:
+         valid_larg = True
+   except:
+      print ("Largura/diâmetro(2) inválida(o). Use somente números ou os decimais separados por '.' e não ','")
+
+## Definição da Profundidade
+
+print (150 * '-')
+
+print()
+
+valid_pro = False
+while valid_pro == False:
+
+   pfr = input("Sua piscina possui uma parte mais funda e outra mais rasa? Digite 'S' para sim e 'N' para não :").lower()
+
+   if pfr == "s":
+      print() 
+      prof_um = float (input("Qual a maior profundidade? (em metros)"))
+      print ()
+      prof_dois = float (input("Qual a menor profundidade? (em metros)"))
+      prof_ud =  (prof_um + prof_dois) / 2
+      volume = comprimento * largura * prof_ud
+   if pfr == "n":
+      print ()
+      prof_tres = float (input ('Qual a profundidade da piscina? (em metros)'))
+      volume = comprimento * largura * prof_tres
+
+   if pfr not in ('s','n'):
+      print ("Digite 'S' para sim e 'N' para não e use somente números ou os decimais separados por '.' e não ','. Ex.: 2.5")
+
+   else: valid_pro = True
+
+volume_soma = volume * vr
+
+print (150 * '-')
+
+print ("Resultados")
+
+print (150 * '-')
+
+print ()
+
+volume_total = str (volume_soma)
+      
+print ("O volume de sua piscina é de" , "{:.1f}".format(volume_soma), "m3" , "ou", round (volume_soma*1000), "litros")
+
+print ()
+
+print (150 * '-')
+
+print ('Quantidade de Produtos a ser Utilizada')
+
+print (150 * '-')
+
+## Dosagens dos Produtos HTH
+ 
+eleve_alca = int (17)
+print ('HTH® Elevador de Alcalinidade =' , round (eleve_alca * volume_soma) , "g")
+
+print ()
+
+red_ph = int (13)
+print ('HTH® Redutor de Alcalinidade e pH =' , round (red_ph * volume_soma) , "ml")
+
+print ()
+       
+red_ph_forte = int (5)
+print ('HTH® Redutor de Alcalinidade e pH Extra Forte =' , round (red_ph_forte * volume_soma) , "ml")
+
+print ()
+
+elph_abaixo = int (10)
+print ('HTH® Elevador de pH (pH abaixo de 6.8) =' , round (elph_abaixo * volume_soma) , "g")
+
+print ()
+
+elph_x = int (5)
+print ('HTH® Elevador de pH (pH de 6.8 a 7.2) =' , round (elph_x * volume_soma) , "g")
+
+print ()
+
+red_alca_ph = int (13)
+print ('HTH® Redutor de Alcalinidade e pH (pH entre 7.4 a 8.0) =' , round (red_alca_ph * volume_soma) , "ml")
+
+print ()
+
+red_alca_ph2 = int (25)
+print ('HTH® Redutor de Alcalinidade e pH (pH acima de 8.0) =' , round (red_alca_ph * volume_soma) , "ml")
+
+print ()
+
+red_alca_ph_forte = int (5)
+print ('HTH® Redutor de Alcalinidade e pH Forte (pH entre 7.4 a 8.0) =' , round (red_alca_ph_forte * volume_soma) , "ml")
+
+print ()
+
+red_alca_ph_forte2 = int (10)
+print ('HTH® Redutor de Alcalinidade e pH Forte (pH acima de 8.0) =' , round (red_alca_ph_forte2 * volume_soma) , "ml")
+
+print ()
+
+clr_gld = int (4)
+print ('HTH® Cloro Granulado Concentrado dosagem normal) =' , round (clr_gld * volume_soma) , "g")
+
+print ()
+
+clr_gld_conc = int (14)
+print ('HTH® Cloro Granulado Concentrado (dosagem supercloração) =', round (clr_gld_conc * volume_soma) , "g")
+
+print ()
+
+clr_adt = float (4.4)
+print ('HTH® Cloro Aditivado Mineral Brilliance (dosagem normal) =' , round (clr_adt * volume_soma) , "g")
+
+print ()
+
+clr_adt_spr = int (18)
+print ('HTH® Cloro Aditivado Mineral Brilliance (dosagem supercloração) =' , round (clr_adt_spr * volume_soma) , "g")
+
+print ()
+
+max_clar = float (1.5)
+print  ('HTH® Clarifica Maxfloc (dosagem clarificante) =' , round (max_clar * volume_soma) , "ml")
+
+print ()
+
+max_clar_dec = int (6)
+print ('HTH® Clarifica Maxfloc (dosagem decantação) =' , round (max_clar_dec * volume_soma) , "ml")
+
+print ()
+
+prev_av = int (5)
+print ('HTH® Previne Água Verde =' , round (prev_av * volume_soma) , "ml")
